@@ -11,7 +11,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Web studio',
+      title: 'Lulu Constructor',
       meta: [
         { charset: 'utf-8' },
         {

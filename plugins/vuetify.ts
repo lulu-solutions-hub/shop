@@ -1,4 +1,3 @@
-import type { DirectiveBinding } from "vue";
 import {createVuetify} from "vuetify";
 
 import * as components from 'vuetify/components';
@@ -27,11 +26,10 @@ export default defineNuxtPlugin((context) => {
       themes: {
         myCustomTheme: {
           colors: {
-            background: '#1A1A1A',
+            background: '#21252B',
             mainGray: '#373738',
-            mainBlack: '#161618',
-            mainViolet: '#6034BB',
-            textGrey: '#9F9F9F',
+            mainRed: '#DA1422',
+            textGrey: '#929292',
           }
         }
       }

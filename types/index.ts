@@ -1,21 +1,20 @@
-export { };
+export {};
 
 declare global {
 
   interface Car {
+    id: number,
     name: string,
     price: number,
-    imgSlider: string[],
     desc: string,
+    subtitle: string,
     pictureDesc: {
-      title?: string,
-      subtitle: string,
-      img: string,
-    }
+        title: string,
+        subtitle?: string,
+      }[],
     functions: {
-      title: string,
       subtitle: string,
+      video: string,
     },
-    video: string,
   }
 }
