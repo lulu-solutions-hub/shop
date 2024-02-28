@@ -40,7 +40,11 @@ export default defineNuxtConfig({
       })
     },
     'nuxt-anchorscroll',
+    '@pinia/nuxt',
   ],
+  pinia: {
+    storesDirs: ['./stores/**', './custom-folder/stores/**'],
+  },
 
   vite: {
     vue: {

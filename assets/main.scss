@@ -5,7 +5,12 @@ body {
 }
 
 .container-main {
-  max-width: 1062px !important;
+  max-width: 1060px !important;
+  margin: 0 auto;
+}
+
+.container-1440 {
+  max-width: 1440px !important;
   margin: 0 auto;
 }
 
