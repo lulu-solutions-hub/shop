@@ -19,15 +19,14 @@
 </script>
 
 <template>
-  <v-container class="pr-0 container-1440" fluid>
+  <v-container class="container-1440" fluid>
     <v-row>
 
       <!--LEFT-->
       <v-col cols="12" md="6" order="2" order-md="1">
         <v-card :class="{'column-right container-50': display.mdAndUp}" variant="text" class="h-100">
           <v-row class="h-100">
-            <v-spacer/>
-            <v-col cols="11" class="d-flex align-center justify-center">
+            <v-col class="d-flex align-center ">
               <v-sheet max-width="413" class="text-black">
                 <h3 class="fz-36 font-weight-regular mb-8">Конструктор</h3>
                 <h2 class="fz-68 font-weight-regular title lh-1 mb-1">{{ car.name }}</h2>
@@ -42,7 +41,7 @@
       </v-col>
 
       <!--RIGHT-->
-      <v-col class="rounded-s-xl" cols="12" md="6" order="1" order-md="2">
+      <v-col cols="12" md="6" order="1" order-md="2">
         <v-card class="bg-blue h-100" variant="text">
           <v-img :src="`/img/cars/${id}/car-header.png`" class="w-100">
             <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100">
