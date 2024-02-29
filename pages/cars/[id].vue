@@ -10,7 +10,8 @@ import Swiper from "~/components/Slider.vue";
   <Header style="margin-bottom: 80px"/>
   <Swiper style="margin-bottom: 40px"/>
   <Desc style="margin-bottom: 45px"/>
-  <PictureDesc/>
+  <PictureDesc style="margin-bottom: 80px"/>
+  <Functions style="margin-bottom: 180px"/>
 </template>
 
 <style scoped>
