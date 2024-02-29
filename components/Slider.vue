@@ -14,7 +14,7 @@
     'https://picsum.photos/400/200'
   ];
 
-  // const glob = import.meta.glob('../img/cars/0/img-slider/*.png', { eager: true });
+  const glob = import.meta.glob('../img/cars/0/img-slider/*.png', { eager: true });
 </script>
 
 <template>
@@ -23,19 +23,15 @@
     <v-row>
       <v-col cols="12">
         <swiper
-          :cssMode="true"
           :navigation="true"
           :pagination="true"
-          :mousewheel="true"
-          :keyboard="true"
           :modules="[Navigation, Pagination]"
-          class="mySwiper"
         >
-          <swiper-slide>Slide 1</swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
-          <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
-          <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
-          <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
+          <swiper-slide v-for="(img, id) in images" :key="id">
+            <v-sheet class="d-flex justify-center w-100">
+              <v-img :src="img" height="565" width="auto"></v-img>
+            </v-sheet>
+          </swiper-slide>
         </swiper>
       </v-col>
     </v-row>
