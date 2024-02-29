@@ -19,7 +19,7 @@
               <v-row>
                 <v-col class="d-flex flex-column justify-center">
                   <h4 class="text-uppercase title font-weight-regular mb-5">Функції</h4>
-                  <p>{{ car.functions.subtitle }}</p>
+                  <p class="fz-20">{{ car.functions.subtitle }}</p>
                 </v-col>
                 <v-col class="d-flex justify-end">
                   <video autoplay="true" loop="true" muted playsinline width="400">

@@ -2,6 +2,8 @@
   import { useDisplay } from "vuetify";
   import { useCarsStore } from "~/stores/cars";
 
+  const { scrollToAnchor } = useAnchorScroll();
+
   const cars = useCarsStore();
   const display = ref(useDisplay());
   const { xs } = useDisplay();
@@ -10,12 +12,23 @@
   const id = ref(route.params?.id);
   const car = computed(() => cars.getCarById(+id.value));
 
-  const menuItems = [
-    "Головна",
-    "Опис",
-    "Збірка",
-    "Контакти"
-  ];
+  const rewardFilters = reactive([
+    { name: "Головна", link: "#monitor" },
+    { name: "Опис", link: "#services" },
+    { name: "Збірка", link: "#why-us" },
+    { name: "Контакти", link: "#about-us" },
+  ]);
+
+  const selectedFilter = ref();
+
+  watchPostEffect(() => {
+    const link = rewardFilters.findIndex((filter) => filter.link == route.hash);
+    if (link != -1) {
+      selectedFilter.value = link;
+    } else {
+      selectedFilter.value = 0;
+    }
+  });
 </script>
 
 <template>
@@ -24,10 +37,10 @@
 
       <!--LEFT-->
       <v-col cols="12" md="6" order="2" order-md="1">
-        <v-card :class="{'column-right container-50': display.mdAndUp}" variant="text" class="h-100">
+        <v-card :class="{'column-right container-50': display.mdAndUp}" class="h-100" variant="text">
           <v-row class="h-100">
             <v-col class="d-flex align-center ">
-              <v-sheet max-width="413" class="text-black">
+              <v-sheet class="text-black" max-width="413">
                 <h3 class="fz-36 font-weight-regular mb-8">Конструктор</h3>
                 <h2 class="fz-68 font-weight-regular title lh-1 mb-1">{{ car.name }}</h2>
                 <span class="fz-36 font-weight-regular lh-1 title mb-1">Technic</span>
@@ -42,15 +55,23 @@
 
       <!--RIGHT-->
       <v-col cols="12" md="6" order="1" order-md="2">
-        <v-card class="bg-blue h-100" variant="text">
-          <v-img :src="`/img/cars/${id}/car-header.png`" class="w-100">
-            <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100">
-              <v-row class="justify-end mx-n5" no-gutters>
-                <v-col v-for="(item, key) in menuItems" :key="key" class="mx-5" cols="auto">
-                  <span class="title fs-18 text-white font-weight-regular">{{ item }}</span>
-                </v-col>
-              </v-row>
-            </v-container>
+        <v-card class="h-100" variant="text">
+          <v-img :src="`/img/cars/${id}/car-header.png`" class="w-100 menu-gradient">
+            <div class="menu-gradient">
+              <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100">
+                <v-item-group v-model="selectedFilter" mandatory>
+                  <v-row no-gutters class="mx-n5 justify-end">
+                    <v-col v-for="(filter, index) in rewardFilters" :key="index" class="fz-20 mx-5" cols="auto">
+                      <v-item v-slot="{ isSelected, toggle }" :value="filter">
+                        <nuxt-link :class="isSelected ? 'text-mainRed font-weight-bold' : 'text-white custom-link'" :href="`${filter.link}`" class="link cursor-pointer font-weight-medium fz-18" @click="scrollToAnchor(filter.link)">
+                          <span @click="toggle">{{ filter.name }}</span>
+                        </nuxt-link>
+                      </v-item>
+                    </v-col>
+                  </v-row>
+                </v-item-group>
+              </v-container>
+            </div>
           </v-img>
         </v-card>
       </v-col>
@@ -70,4 +91,19 @@
   .column-right {
     margin: 0 0 0 auto;
   }
+
+  .custom-link {
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease;
+
+    &:hover {
+      padding: 0 0 2px 0;
+      border-color: red;
+    }
+  }
+
+  .menu-gradient {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 100) );
+  }
+
 </style>
