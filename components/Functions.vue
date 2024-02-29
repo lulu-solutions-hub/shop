@@ -15,14 +15,16 @@
         <v-card variant="text">
           <fieldset class="card-border rounded-e-xl">
             <legend class="fz-48 title font-weight-regular lh-140">Збірка</legend>
-            <v-card-item>
+            <v-card-item class="pt-0 pb-5">
               <v-row>
                 <v-col class="d-flex flex-column justify-center">
                   <h4 class="text-uppercase title font-weight-regular mb-5">Функції</h4>
-                  <p>{{car.functions.subtitle}}</p>
+                  <p>{{ car.functions.subtitle }}</p>
                 </v-col>
-                <v-col>
-                  <v-sheet max-width="400" height="565"></v-sheet>
+                <v-col class="d-flex justify-end">
+                  <video autoplay="true" loop="true" muted playsinline width="400">
+                    <source src="/img/cars/0/video/video.mp4" type="video/mp4"/>
+                  </video>
                 </v-col>
               </v-row>
             </v-card-item>

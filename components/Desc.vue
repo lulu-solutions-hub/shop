@@ -12,12 +12,20 @@
   <v-container class="container-main" fluid>
     <v-row>
       <v-col cols="12">
-        <p class="fz-20"><span class="font-weight-bold">LEGO {{car.name}} - </span>{{car.desc}}</p>
+        <fieldset class="card-border rounded-e-xl py-5">
+          <legend class="fz-28 title font-weight-regular lh-140">LEGO {{car.name}}</legend>
+          <p class="fz-20"><span class="font-weight-bold"></span>{{car.desc}}</p>
+        </fieldset>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <style scoped>
-
+  .card-border {
+    border-bottom: 12px solid red;
+    border-top: 12px solid red;
+    border-right: 12px solid red;
+    border-left: none;
+  }
 </style>

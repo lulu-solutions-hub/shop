@@ -19,7 +19,7 @@
 </script>
 
 <template>
-  <section>
+  <section class="py-5">
     <v-container class="container-main" fluid>
       <v-row no-gutters>
         <v-col cols="12">
