@@ -3,6 +3,7 @@
   import { Swiper, SwiperSlide } from "swiper/vue";
   import 'swiper/css/navigation';
   import 'swiper/css/pagination';
+  import 'swiper/css';
 
   const prev = ref(null);
   const next = ref(null);
@@ -21,12 +22,20 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <swiper :modules="[Navigation, Pagination]" :navigation="true" :pagination="{ clickable: true }">
-          <swiper-slide v-for="(img, id) in images" :key="id">
-            <v-sheet class="d-flex justify-center w-100">
-              <v-img :src="img" height="565" width="auto"></v-img>
-            </v-sheet>
-          </swiper-slide>
+        <swiper
+          :cssMode="true"
+          :navigation="true"
+          :pagination="true"
+          :mousewheel="true"
+          :keyboard="true"
+          :modules="[Navigation, Pagination]"
+          class="mySwiper"
+        >
+          <swiper-slide>Slide 1</swiper-slide>
+          <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
+          <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
+          <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
+          <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
         </swiper>
       </v-col>
     </v-row>
