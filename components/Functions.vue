@@ -14,7 +14,7 @@
       <v-col cols="12">
         <v-card variant="text">
           <fieldset class="card-border rounded-e-xl">
-            <legend class="fz-48 title font-weight-regular lh-140">Збірка</legend>
+            <legend class="fz-48 title font-weight-regular lh-140 pr-3">Збірка</legend>
             <v-card-item class="pt-0 pb-5">
               <v-row>
                 <v-col class="d-flex flex-column justify-center">

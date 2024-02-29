@@ -27,7 +27,7 @@ export default defineNuxtPlugin((context) => {
         myCustomTheme: {
           colors: {
             background: '#21252B',
-            mainGray: '#373738',
+            mainGrey: '#373738',
             mainRed: '#DA1422',
             textGrey: '#929292',
           }
