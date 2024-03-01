@@ -13,10 +13,10 @@
   const car = computed(() => cars.getCarById(+id.value));
 
   const rewardFilters = reactive([
-    { name: "Головна", link: "#monitor" },
-    { name: "Опис", link: "#services" },
-    { name: "Збірка", link: "#why-us" },
-    { name: "Контакти", link: "#about-us" },
+    { name: "Головна", link: "#header" },
+    { name: "Опис", link: "#desc" },
+    { name: "Збірка", link: "#functions" },
+    { name: "Контакти", link: "#form" },
   ]);
 
   const selectedFilter = ref();
@@ -32,7 +32,7 @@
 </script>
 
 <template>
-  <v-container class="container-1440" fluid>
+  <v-container class="container-1440 pt-0" fluid>
     <v-row>
 
       <!--LEFT-->
@@ -55,7 +55,7 @@
 
       <!--RIGHT-->
       <v-col cols="12" md="6" order="1" order-md="2">
-        <v-card class="h-100" variant="text">
+        <v-card class="h-100 rounded-0" variant="text">
           <v-img :src="`/img/cars/${id}/car-header.png`" class="w-100 menu-gradient">
             <div class="menu-gradient">
               <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100">

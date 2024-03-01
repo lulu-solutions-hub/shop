@@ -31,11 +31,11 @@
 
 <template>
   <section class="bg-background" style="padding-bottom: 50px; padding-top: 80px">
-    <v-container class="container-main " fluid>
+    <v-container class="container-main" fluid>
       <v-row no-gutters>
 
         <v-col cols="12">
-          <v-row class="align-center mb-9 mr-n10" no-gutters>
+          <v-row class="align-center mb-9" no-gutters>
             <v-col v-for="(link, key) in socials" :key="key" cols="auto" class="mr-10">
               <div>
                 <h6 class="fz-24 font-weight-medium lh-1 mb-4">{{link.title}}</h6>

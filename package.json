@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/webpack-env": "^1.18.4",
     "nuxt": "^3.9.3",
     "sass": "^1.70.0",
@@ -22,6 +23,7 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@pinia/nuxt": "^0.5.1",
+    "aos": "^2.3.4",
     "nuxt-anchorscroll": "^1.0.3",
     "pinia": "^2.1.7",
     "swiper": "^11.0.7",
