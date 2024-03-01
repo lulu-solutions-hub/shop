@@ -2,8 +2,6 @@
   import { useDisplay } from "vuetify";
   import { useCarsStore } from "~/stores/cars";
 
-  const { scrollToAnchor } = useAnchorScroll();
-
   const cars = useCarsStore();
   const display = ref(useDisplay());
   const { xs } = useDisplay();
@@ -11,28 +9,10 @@
   const route = useRoute();
   const id = ref(route.params?.id);
   const car = computed(() => cars.getCarById(+id.value));
-
-  const rewardFilters = reactive([
-    { name: "Головна", link: "#monitor" },
-    { name: "Опис", link: "#services" },
-    { name: "Збірка", link: "#why-us" },
-    { name: "Контакти", link: "#about-us" },
-  ]);
-
-  const selectedFilter = ref();
-
-  watchPostEffect(() => {
-    const link = rewardFilters.findIndex((filter) => filter.link == route.hash);
-    if (link != -1) {
-      selectedFilter.value = link;
-    } else {
-      selectedFilter.value = 0;
-    }
-  });
 </script>
 
 <template>
-  <v-container class="container-1440 pb-0 pr-0" fluid>
+  <v-container class="container-1440 pb-0 pr-0 pb-lg-4" fluid>
     <v-row>
 
       <!--LEFT-->

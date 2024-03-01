@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import 'aos/dist/aos.css';
   import { loadAllFilesFromFolder } from "~/composables/LoadAllFilesFromFolder";
   import { useCarsStore } from "~/stores/cars";
 
@@ -20,12 +21,15 @@
             <v-img :src="files[key]"></v-img>
           </v-col>
           <v-col :order="(key % 2 == 0) ? 2 : 1" class="d-flex align-center pa-0" :class="(key % 2 == 0) ? 'justify-end' : 'justify-start'">
-            <v-sheet :max-width="472" class="text-black w-100">
-              <h4 class="fz-28 font-weight-regular mb-4">{{ item.title }}</h4>
+            <v-sheet :max-width="472" class="text-black w-100" :data-aos="(key % 2 == 0) ? 'fade-left' : 'fade-right'">
+              <h4 class="fz-28 font-weight-regular mb-4" >{{ item.title }}</h4>
               <p class="fz-20">{{item.subtitle}}</p>
             </v-sheet>
           </v-col>
         </v-row>
+      </v-col>
+      <v-col cols="12" class="mt-10">
+        <v-btn class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" width="200">Придбати</v-btn>
       </v-col>
     </v-row>
   </v-container>

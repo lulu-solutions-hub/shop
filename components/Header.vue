@@ -13,10 +13,10 @@
   const car = computed(() => cars.getCarById(+id.value));
 
   const rewardFilters = reactive([
-    { name: "Головна", link: "#monitor" },
-    { name: "Опис", link: "#services" },
-    { name: "Збірка", link: "#why-us" },
-    { name: "Контакти", link: "#about-us" },
+    { name: "Головна", link: "#header" },
+    { name: "Опис", link: "#desc" },
+    { name: "Збірка", link: "#functions" },
+    { name: "Контакти", link: "#form" },
   ]);
 
   const selectedFilter = ref();

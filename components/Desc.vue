@@ -14,7 +14,7 @@
       <v-col cols="12">
         <fieldset class="card-border rounded-e-xl py-5">
           <legend class="fz-28 title font-weight-regular lh-140 pr-3">LEGO {{car.name}}</legend>
-          <p class="fz-20"><span class="font-weight-bold"></span>{{car.desc}}</p>
+          <p class="fz-20" data-aos="fade-right"><span class="font-weight-bold"></span>{{car.desc}}</p>
         </fieldset>
       </v-col>
     </v-row>
