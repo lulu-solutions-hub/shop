@@ -22,10 +22,9 @@
   ];
 
   const footerItems = [
-    { name: "Головна", link: "#main" },
+    { name: "Головна", link: "#header" },
     { name: "Опис", link: "#desc" },
-    { name: "Збірка", link: "#func" },
-    { name: "Контакти", link: "#form" },
+    { name: "Збірка", link: "#functions" },
   ];
 </script>
 
