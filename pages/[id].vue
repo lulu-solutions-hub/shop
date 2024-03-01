@@ -13,13 +13,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <Header style="margin-bottom: 80px" #id="header"/>
-  <Swiper style="margin-bottom: 40px" #id="swiper"/>
-  <Desc style="margin-bottom: 45px" #id="desc"/>
-  <PictureDesc style="margin-bottom: 40px" #id="pictureDesc"/>
-  <Functions style="margin-bottom: 80px" #id="functions"/>
-  <Form #id="form"/>
-  <Footer #id="footer"/>
+  <Header style="margin-bottom: 80px" id="header"/>
+  <Swiper style="margin-bottom: 40px" id="swiper"/>
+  <Desc style="margin-bottom: 45px" id="desc"/>
+  <PictureDesc style="margin-bottom: 40px" id="pictureDesc"/>
+  <Functions style="margin-bottom: 80px" id="functions"/>
+  <Form id="form"/>
+  <Footer id="footer"/>
 </template>
 
 <style scoped>
