@@ -12,6 +12,7 @@ import Swiper from "~/components/Slider.vue";
   <Desc style="margin-bottom: 45px"/>
   <PictureDesc style="margin-bottom: 80px"/>
   <Functions style="margin-bottom: 80px"/>
+  <Form />
   <Footer/>
 </template>
 

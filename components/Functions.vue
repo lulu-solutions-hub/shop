@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+  import { loadAllFilesFromFolder } from "~/composables/LoadAllFilesFromFolder";
   import { useCarsStore } from "~/stores/cars";
 
   const cars = useCarsStore();
@@ -6,6 +7,8 @@
   const route = useRoute();
   const id = ref(route.params?.id);
   const car = computed(() => cars.getCarById(+id.value));
+
+  const { files } = loadAllFilesFromFolder(""+id.value, "video")
 </script>
 
 <template>
@@ -23,7 +26,7 @@
                 </v-col>
                 <v-col class="d-flex justify-end">
                   <video autoplay="true" loop="true" muted playsinline width="400">
-                    <source src="/img/cars/0/video/video.mp4" type="video/mp4"/>
+                    <source :src="files[0]" type="video/mp4"/>
                   </video>
                 </v-col>
               </v-row>

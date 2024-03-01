@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+  import { EffectCoverflow, Navigation, Pagination, Autoplay } from "swiper/modules";
   import { Swiper, SwiperSlide } from "swiper/vue";
   import 'swiper/css/navigation';
   import 'swiper/css/pagination';
@@ -15,7 +15,7 @@
   const id = ref(route.params?.id);
   const car = computed(() => cars.getCarById(+id.value));
 
-  const { images } = loadAllFilesFromFolder(""+id.value, "img-slider")
+  const { files } = loadAllFilesFromFolder("" + id.value, "img-slider");
 </script>
 
 <template>
@@ -23,8 +23,8 @@
     <v-container class="container-main" fluid>
       <v-row no-gutters>
         <v-col cols="12">
-          <swiper :centeredSlides="true" :coverflowEffect="{rotate: 50, stretch: 0, depth: 100,modifier: 1, slideShadows: true}" :effect="'coverflow'" :grabCursor="true" :initial-slide="1" :modules="[Navigation, Pagination, EffectCoverflow]" :navigation="true" :navigationEnabled="true" :pagination="{ clickable: true }" :slidesPerView="3">
-            <swiper-slide v-for="(img, id) in images" :key="id">
+          <swiper :autoplay="{  delay: 4000, disableOnInteraction: false,}" :centeredSlides="true" :coverflowEffect="{rotate: 50, stretch: 0, depth: 100,modifier: 1, slideShadows: true}" :effect="'coverflow'" :grabCursor="true" :initial-slide="1" :loop="true" :modules="[Navigation, Pagination, EffectCoverflow, Autoplay]" :navigation="true" :navigationEnabled="true" :pagination="{ clickable: true }" :slidesPerView="3">
+            <swiper-slide v-for="(img, id) in files" :key="id">
               <v-img :src="img" height="300" width="auto"></v-img>
             </swiper-slide>
           </swiper>
