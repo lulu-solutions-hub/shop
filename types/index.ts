@@ -16,7 +16,6 @@ declare global {
       subtitle: string,
       size: string,
       details: string,
-      video: string,
     },
   }
 }
