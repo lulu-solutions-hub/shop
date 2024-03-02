@@ -24,10 +24,10 @@
               <v-sheet class="text-black" max-width="518">
                 <h5 class="fz-36 font-weight-regular lh-1 mb-4">Залишились Питання?</h5>
                 <p class="fz-20 font-weight-regular lh-140 mb-6">Залиште нам коментар, або зв’яжіть з нами через Instagram або Telegram</p>
-                <v-form v-model="valid" netlify>
-                <v-text-field class="mb-1" variant="outlined"  :rules="[v => !!v || 'Це поле необхідно заповнити']" label="Ім’я"></v-text-field>
-                <v-text-field class="mb-1" variant="outlined"  :rules="[v => !!v || 'Це поле необхідно заповнити']" label="Телефон"></v-text-field>
-                <v-textarea variant="outlined" label="Залиште коментар"></v-textarea>
+                <v-form v-model="valid" name="contact" method="POST" data-netlify="true">
+                <v-text-field type="text" name="name" class="mb-1" variant="outlined"  :rules="[v => !!v || 'Це поле необхідно заповнити']" label="Ім’я"></v-text-field>
+                <v-text-field type="text" name="phone" class="mb-1" variant="outlined"  :rules="[v => !!v || 'Це поле необхідно заповнити']" label="Телефон"></v-text-field>
+                <v-textarea variant="outlined"  name="message" label="Залиште коментар"></v-textarea>
                   <v-row justify="space-between">
                     <v-col>
                       <v-btn type="submit" :disabled="!valid" class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" width="200">Надіслати</v-btn>
