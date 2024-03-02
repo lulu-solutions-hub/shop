@@ -42,6 +42,7 @@ export default defineNuxtConfig({
     },
     'nuxt-anchorscroll',
     '@pinia/nuxt',
+    'nuxt-icon',
   ],
   pinia: {
     storesDirs: ['./stores/**', './custom-folder/stores/**'],

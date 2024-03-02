@@ -16,15 +16,15 @@
   const { mobile } = useDisplay();
 
   const socials = [
-    { title: "Telegram", name: "@LuLuconstructor", link: " " },
-    { title: "Instagram", name: "@lulu_constructor_shop", link: " "  },
-    { title: "Телефон", name: "+380638187969", link: " "  },
+    { title: "Telegram", name: "@LuLu_constructor", link: "https://t.me/lulu_constructor", blank: true, },
+    { title: "Instagram", name: "@lulu_constructor_shop", link: "https://www.instagram.com/lulu_constructor_shop?igsh=aHhsaXJnZndqcXM1", blank: true  },
+    { title: "Телефон", name: "+380638187969", link: "tel:+380638187969", blank: true  },
   ];
 
   const footerItems = [
-    { name: "Головна", link: "#header" },
-    { name: "Опис", link: "#desc" },
-    { name: "Збірка", link: "#functions" },
+    { name: "Головна", link: "#header", blank: false },
+    { name: "Опис", link: "#desc", blank: false },
+    { name: "Збірка", link: "#functions", blank: false },
   ];
 </script>
 
@@ -38,10 +38,11 @@
             <v-col v-for="(link, key) in socials" :key="key" cols="auto" class="mr-10">
               <div>
                 <h6 class="fz-24 font-weight-medium lh-1 mb-4">{{link.title}}</h6>
-                <nuxt-link :href="link.link" class="link text-textGrey fz-24 lg-1 custom-link">{{link.name}}</nuxt-link>
+                <nuxt-link  :target="link.blank ? '_blank' : ''" :href="link.link" class="link text-textGrey fz-24 lg-1 custom-link">{{link.name}}</nuxt-link>
               </div>
             </v-col>
             <v-col class="d-flex flex-column align-end mb-n4">
+
               <nuxt-link :href="link.link" class="d-block text-textGrey fz-24 mb-4 custom-link link" v-for="(link, key) in footerItems" :key="key">{{link.name}}</nuxt-link>
             </v-col>
           </v-row>

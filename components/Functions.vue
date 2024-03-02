@@ -22,8 +22,10 @@
               <v-row>
                 <v-col class="d-flex flex-column justify-center">
                   <div data-aos="fade-left">
-                    <h4 class="text-uppercase title font-weight-regular mb-5">Функції</h4>
-                    <p class="fz-20">{{ car.functions.subtitle }}</p>
+                    <h3 class="text-uppercase title font-weight-regular mb-5">Функції</h3>
+                    <p class="fz-20 mb-2">{{ car.functions.subtitle }}</p>
+                    <p class="fz-20 font-weight-medium">{{ car.functions.details }}</p>
+                    <p class="fz-20 font-weight-medium">{{ car.functions.size }}</p>
                   </div>
                 </v-col>
                 <v-col class="d-flex justify-end">

@@ -14,6 +14,8 @@ declare global {
       }[],
     functions: {
       subtitle: string,
+      size: string,
+      details: string,
       video: string,
     },
   }

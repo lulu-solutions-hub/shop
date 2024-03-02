@@ -29,7 +29,7 @@
         </v-row>
       </v-col>
       <v-col cols="12" class="mt-10">
-        <v-btn class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" width="200">Придбати</v-btn>
+        <v-btn class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" to="#form" width="200">Придбати</v-btn>
       </v-col>
     </v-row>
   </v-container>

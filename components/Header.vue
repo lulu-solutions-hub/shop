@@ -46,7 +46,7 @@
                 <span class="fz-36 font-weight-regular lh-1 title mb-1">Technic</span>
                 <p class="fz-36 title text-mainRed mb-8 lh-1">{{ car.price }} грн</p>
                 <p class="fz-20 lh-normal font-weight-regular mb-12">{{ car.subtitle }}</p>
-                <v-btn class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" width="200">Придбати</v-btn>
+                <v-btn class="bg-red ls-normal text-none fz-20 font-weight-medium" to="#form" size="large" width="200">Придбати</v-btn>
               </v-sheet>
             </v-col>
           </v-row>

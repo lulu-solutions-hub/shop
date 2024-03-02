@@ -2,6 +2,7 @@
   import { useDisplay } from "vuetify";
   import { useCarsStore } from "~/stores/cars";
 
+  const valid = ref(false);
   const cars = useCarsStore();
   const display = ref(useDisplay());
   const { xs } = useDisplay();
@@ -23,9 +24,20 @@
               <v-sheet class="text-black" max-width="518">
                 <h5 class="fz-36 font-weight-regular lh-1 mb-4">Залишились Питання?</h5>
                 <p class="fz-20 font-weight-regular lh-140 mb-6">Залиште нам коментар, або зв’яжіть з нами через Instagram або Telegram</p>
-                <v-text-field variant="outlined" label="Ім’я"></v-text-field>
-                <v-textarea variant="outlined" label="Залиште коментар" class="mb-12"></v-textarea>
-                <v-btn class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" width="200">Надіслати</v-btn>
+                <v-form v-model="valid" netlify>
+                <v-text-field class="mb-1" variant="outlined"  :rules="[v => !!v || 'Це поле необхідно заповнити']" label="Ім’я"></v-text-field>
+                <v-text-field class="mb-1" variant="outlined"  :rules="[v => !!v || 'Це поле необхідно заповнити']" label="Телефон"></v-text-field>
+                <v-textarea variant="outlined" label="Залиште коментар"></v-textarea>
+                  <v-row justify="space-between">
+                    <v-col>
+                      <v-btn type="submit" :disabled="!valid" class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" width="200">Надіслати</v-btn>
+                    </v-col>
+                    <v-col class="text-right">
+                      <nuxt-link target="_blank" to="https://www.instagram.com/lulu_constructor_shop?igsh=aHhsaXJnZndqcXM1"><Icon name="skill-icons:instagram" size="40px" /></nuxt-link>
+                      <nuxt-link target="_blank" to="https://t.me/lulu_constructor" class="ml-2"><Icon name="logos:telegram" size="40px" /></nuxt-link>
+                    </v-col>
+                  </v-row>
+                </v-form>
               </v-sheet>
             </v-col>
           </v-row>
