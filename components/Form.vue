@@ -24,7 +24,7 @@
               <v-sheet class="text-black" max-width="518">
                 <h5 class="fz-36 font-weight-regular lh-1 mb-4">Залишились Питання?</h5>
                 <p class="fz-20 font-weight-regular lh-140 mb-6">Залиште нам коментар, або зв’яжіть з нами через Instagram або Telegram</p>
-                <v-form v-model="valid" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" @submit.prevent="submitForm">
+                <v-form v-model="valid" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                   <input type="hidden" name="form-name" value="contact" />
                   <input type="hidden" name="bot-field" />
                   <v-text-field type="text" name="name" class="mb-1" variant="outlined" :rules="[v => !!v || 'Це поле необхідно заповнити']" label="Ім’я"></v-text-field>
