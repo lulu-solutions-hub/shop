@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <v-container class="container-1440 pr-0" fluid>
+  <v-container class="container-1440 pr-md-0" fluid>
     <v-row>
 
       <!--LEFT-->
@@ -21,8 +21,8 @@
         <v-card :class="{'column-right container-50': display.mdAndUp}" class="h-100" variant="text">
           <v-row class="h-100">
             <v-col class="d-flex align-center">
-              <v-sheet class="text-black" max-width="518">
-                <h5 class="fz-36 font-weight-regular lh-1 mb-4">Залишились Питання?</h5>
+              <v-sheet class="text-black" :max-width="display.smAndDown ? 'unset' : 518" width="100%">
+                <h5 class="fz-36 font-weight-regular lh-1 mb-4">Бажаєте замовити?</h5>
                 <p class="fz-20 font-weight-regular lh-140 mb-6">Залиште нам коментар, або зв’яжіть з нами через Instagram або Telegram</p>
                 <v-form v-model="valid" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                   <input type="hidden" name="form-name" value="contact" />

@@ -19,7 +19,7 @@
     <Desc id="desc" style="margin-bottom: 45px"/>
     <PictureDesc id="pictureDesc" style="margin-bottom: 40px"/>
     <Functions id="functions" style="margin-bottom: 80px"/>
-    <Form id="form"/>
+    <Form id="form" style="margin-bottom: 80px"/>
     <Footer id="footer"/>
   </div>
 </template>
