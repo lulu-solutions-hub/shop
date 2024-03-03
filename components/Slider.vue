@@ -17,8 +17,10 @@
   const id = ref(route.params?.id);
   const car = computed(() => cars.getCarById(+id.value));
   const modules = display.value.xs ? [] : [Navigation, Pagination, EffectCoverflow, Autoplay];
-  const swiperSetting =
-    display.value.smAndDown ? {
+  const swiperSetting = ref()
+
+  watchEffect(() => {
+    swiperSetting.value = display.value.smAndDown ? {
       modules: [Pagination, Autoplay],
       initialSlide: 0,
       slidesPerView: 1,
@@ -29,6 +31,7 @@
       slidesPerView: 3,
       navigation: true
     };
+  })
 
   const { files } = loadAllFilesFromFolder("" + id.value, "img-slider");
 
