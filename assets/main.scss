@@ -153,12 +153,16 @@ body {
   font-size: 48px !important;
   font-weight: 600;
   @media (max-width: 600px) {
-    font-size: 24px !important;
+    font-size: 32px !important;
   }
 }
 
 .fz-68 {
   font-size: 68px !important;
+
+  @media (max-width: 600px) {
+    font-size: 48px !important;
+  }
 }
 
 .fz-16m {
