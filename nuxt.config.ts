@@ -3,6 +3,7 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import path from "path";
 
 export default defineNuxtConfig({
+  appConfig: undefined,
   devtools: { enabled: true },
 
   plugins: [
@@ -43,7 +44,18 @@ export default defineNuxtConfig({
     'nuxt-anchorscroll',
     '@pinia/nuxt',
     'nuxt-icon',
+    'nuxt-gtag',
   ],
+
+  gtag: {
+    // Your primary Google tag ID
+    id: 'G-SJQDFDXS5Q',
+    // Additional configuration for this tag ID
+    config: {
+      page_title: 'LuLu Constructor'
+    },
+  },
+
   pinia: {
     storesDirs: ['./stores/**', './custom-folder/stores/**'],
   },
@@ -84,5 +96,5 @@ export default defineNuxtConfig({
       '/old-trade/**': { ssr: true }
     }
   },
-  ssr: true,
+  ssr: true
 })
