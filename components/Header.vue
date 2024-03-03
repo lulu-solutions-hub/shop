@@ -32,14 +32,14 @@
 </script>
 
 <template>
-  <v-container class="container-1440 pt-0" fluid>
+  <v-container class="container-1440 pt-0 px-0" fluid>
     <v-row>
 
       <!--LEFT-->
-      <v-col cols="12" md="6" order="2" order-md="1">
+      <v-col cols="12" md="6" order="2" order-md="1" class="px-7">
         <v-card :class="{'column-right container-50': display.mdAndUp}" class="h-100" variant="text">
           <v-row class="h-100">
-            <v-col class="d-flex align-center ">
+            <v-col class="d-flex align-center">
               <v-sheet class="text-black" :max-width="xs ? 'unset' : 413">
                 <h3 class="fz-36 font-weight-regular mb-8">Конструктор</h3>
                 <h2 class="fz-68 font-weight-regular title lh-1 mb-1">{{ car.name }}</h2>
@@ -55,10 +55,10 @@
 
       <!--RIGHT-->
       <v-col cols="12" md="6" order="1" order-md="2">
-        <v-card class="h-100 rounded-0 mx-n7 mx-md-0" variant="text">
+        <v-card class="h-100 rounded-0 mx-n3 mx-md-0" variant="text">
           <v-img :src="`/img/cars/${id}/car-header.png`" class="w-100 menu-gradient">
             <div class="menu-gradient">
-              <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100 pr-7 pr-md-0">
+              <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100 pr-7">
                 <v-item-group v-model="selectedFilter" mandatory>
                   <v-row no-gutters class="mx-sm-n5 justify-end">
                     <v-col v-for="(filter, index) in rewardFilters" :key="index" class="fz-20 mx-3 mx-sm-5" cols="auto">
