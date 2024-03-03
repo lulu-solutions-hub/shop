@@ -13,6 +13,7 @@
     "@types/aos": "^3.0.7",
     "@types/webpack-env": "^1.18.4",
     "nuxt": "^3.9.3",
+    "nuxt-gtag": "^2.0.4",
     "nuxt-icon": "^0.6.8",
     "sass": "^1.70.0",
     "vite-plugin-vuetify": "^2.0.1",
