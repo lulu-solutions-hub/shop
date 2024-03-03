@@ -159,6 +159,10 @@ body {
 
 .fz-68 {
   font-size: 68px !important;
+
+  @media (max-width: 600px) {
+    font-size: 48px !important;
+  }
 }
 
 .fz-16m {

@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <v-container class="container-1440 pb-0 pr-0 pb-lg-4" fluid>
+  <v-container class="container-1440 pr-0" fluid>
     <v-row>
 
       <!--LEFT-->
