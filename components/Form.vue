@@ -32,9 +32,9 @@
                   <v-textarea variant="outlined" name="message" label="Залиште коментар"></v-textarea>
                   <v-row justify="space-between">
                     <v-col>
-                      <v-btn type="submit" :disabled="!valid" class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" width="200">Надіслати</v-btn>
+                      <v-btn type="submit" :disabled="!valid" class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" width="200" :block="xs">Надіслати</v-btn>
                     </v-col>
-                    <v-col class="text-right">
+                    <v-col class="d-flex flex-nowrap" cols="auto">
                       <nuxt-link target="_blank" to="https://www.instagram.com/lulu_constructor_shop?igsh=aHhsaXJnZndqcXM1"><Icon name="skill-icons:instagram" size="40px" /></nuxt-link>
                       <nuxt-link target="_blank" to="https://t.me/lulu_constructor" class="ml-2"><Icon name="logos:telegram" size="40px" /></nuxt-link>
                     </v-col>
