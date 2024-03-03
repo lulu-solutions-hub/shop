@@ -16,22 +16,25 @@
   const route = useRoute();
   const id = ref(route.params?.id);
   const car = computed(() => cars.getCarById(+id.value));
-  const modules = display.value.xs ? [] : [Navigation, Pagination, EffectCoverflow, Autoplay];
-  const swiperSetting = ref()
+  const swiperSetting = ref({});
 
   watchEffect(() => {
     swiperSetting.value = display.value.smAndDown ? {
       modules: [Pagination, Autoplay],
       initialSlide: 0,
       slidesPerView: 1,
-      navigation: false
+      navigation: false,
+      effect: '',
+      coverflowEffect: {}
     } : {
       modules: [Navigation, Pagination, EffectCoverflow, Autoplay],
       initialSlide: 1,
       slidesPerView: 3,
-      navigation: true
+      navigation: true,
+      effect: 'coverflow',
+      coverflowEffect: {rotate: 50, stretch: 0, depth: 100,modifier: 1, slideShadows: true}
     };
-  })
+  });
 
   const { files } = loadAllFilesFromFolder("" + id.value, "img-slider");
 
@@ -40,13 +43,22 @@
 <template>
   <section class="py-5">
     <v-container class="container-main" fluid>
-      <v-row no-gutters justify="center">
+      <v-row justify="center" no-gutters>
         <v-col cols="12">
-          <swiper :autoplay="{  delay: 4000, disableOnInteraction: false,}" :centeredSlides="true" :coverflowEffect="{rotate: 50, stretch: 0, depth: 100,modifier: 1, slideShadows: true}" :effect="'coverflow'" :grabCursor="true" :initial-slide="swiperSetting.initialSlide" :loop="true" :modules="swiperSetting.modules" :navigation="swiperSetting.navigation" :navigationEnabled="true" :pagination="{ clickable: true }" :slidesPerView="swiperSetting.slidesPerView">
-            <swiper-slide v-for="(img, id) in files" :key="id">
-              <v-img :src="img" width="auto" class="rounded-lg rounded-md-0"></v-img>
-            </swiper-slide>
-          </swiper>
+          <template v-if="display.mdAndUp">
+            <swiper :autoplay="{  delay: 4000, disableOnInteraction: false,}" :centeredSlides="true" :coverflowEffect="swiperSetting.coverflowEffect" :effect="swiperSetting.effect" :grabCursor="true" :initial-slide="swiperSetting.initialSlide" :loop="true" :modules="swiperSetting.modules" :navigation="swiperSetting.navigation" :navigationEnabled="true" :pagination="{ clickable: true }" :slidesPerView="swiperSetting.slidesPerView">
+              <swiper-slide v-for="(img, id) in files" :key="id">
+                <v-img :src="img" class="rounded-lg rounded-md-0" width="auto"></v-img>
+              </swiper-slide>
+            </swiper>
+          </template>
+          <template v-else>
+            <swiper :autoplay="{  delay: 4000, disableOnInteraction: false,}" :centeredSlides="true" :grabCursor="true" :initial-slide="swiperSetting.initialSlide" :loop="true" :modules="swiperSetting.modules" :navigation="swiperSetting.navigation" :navigationEnabled="true" :pagination="{ clickable: true }" :slidesPerView="swiperSetting.slidesPerView">
+              <swiper-slide v-for="(img, id) in files" :key="id">
+                <v-img :src="img" class="rounded-lg rounded-md-0" width="auto"></v-img>
+              </swiper-slide>
+            </swiper>
+          </template>
         </v-col>
       </v-row>
     </v-container>
