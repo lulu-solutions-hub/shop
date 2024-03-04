@@ -29,6 +29,31 @@
       selectedFilter.value = 0;
     }
   });
+
+  useHead({
+    script: [
+      {
+        innerHTML: `
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '285706427331877');
+            fbq('track', 'PageView');
+        `,
+        type: 'text/javascript',
+      },
+    ],
+    noscript: [
+      {
+        innerHTML: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=285706427331877&ev=PageView&noscript=1"/>`,
+      }
+    ]
+  });
 </script>
 
 <template>
@@ -36,17 +61,17 @@
     <v-row>
 
       <!--LEFT-->
-      <v-col cols="12" md="6" order="2" order-md="1" class="px-7">
+      <v-col class="px-7" cols="12" md="6" order="2" order-md="1">
         <v-card :class="{'column-right container-50': display.mdAndUp}" class="h-100" variant="text">
           <v-row class="h-100">
             <v-col class="d-flex align-center">
-              <v-sheet class="text-black" :max-width="xs ? 'unset' : 413">
+              <v-sheet :max-width="xs ? 'unset' : 413" class="text-black">
                 <h3 class="fz-36 font-weight-regular mb-8">Конструктор</h3>
                 <h2 class="fz-68 font-weight-regular title lh-1 mb-1">{{ car.name }}</h2>
                 <span class="fz-36 font-weight-regular lh-1 title mb-1">Technic</span>
                 <p class="fz-32m title text-mainRed mb-8 lh-1">{{ car.price }} грн</p>
                 <p class="fz-20 lh-normal font-weight-regular mb-12">{{ car.subtitle }}</p>
-                <v-btn class="bg-red ls-normal text-none fz-20 font-weight-medium" to="#form" :size="xs ? 'x-large' : 'large'" width="200" :block="xs">Придбати</v-btn>
+                <v-btn :block="xs" :size="xs ? 'x-large' : 'large'" class="bg-red ls-normal text-none fz-20 font-weight-medium" to="#form" width="200">Придбати</v-btn>
               </v-sheet>
             </v-col>
           </v-row>
@@ -60,7 +85,7 @@
             <div class="menu-gradient">
               <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100 pr-7">
                 <v-item-group v-model="selectedFilter" mandatory>
-                  <v-row no-gutters class="mx-sm-n5 justify-end">
+                  <v-row class="mx-sm-n5 justify-end" no-gutters>
                     <v-col v-for="(filter, index) in rewardFilters" :key="index" class="fz-20 mx-3 mx-sm-5" cols="auto">
                       <v-item v-slot="{ isSelected, toggle }" :value="filter">
                         <nuxt-link :class="isSelected ? 'text-mainRed font-weight-bold' : 'text-white custom-link'" :href="`${filter.link}`" class="link cursor-pointer font-weight-medium fz-18" @click="scrollToAnchor(filter.link)">
@@ -83,7 +108,7 @@
   .container-50 {
     max-width: 530px;
 
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
       max-width: unset;
     }
   }
@@ -107,7 +132,7 @@
   }
 
   .menu-gradient {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 100) );
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 100));
   }
 
 </style>
