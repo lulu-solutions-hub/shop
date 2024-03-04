@@ -1,5 +1,5 @@
 <template>
-  <v-container class="h-100">
+  <v-container class="h-100 pt-15">
     <img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=285706427331877&ev=Lead&noscript=1" />
     <v-row class="h-100" align="center" justify="center">
       <v-col cols="12" md="8">
@@ -19,13 +19,10 @@
 <style>
 
   .card-border {
-    border-bottom: 12px solid red;
-    border-top: 12px solid red;
-    border-right: 12px solid red;
-    border-left:  12px solid red;
+    border: 12px solid red;
 
     @media(max-width: 600px) {
-      border: none;
+      border: 5px solid red;
     }
   }
 </style>
