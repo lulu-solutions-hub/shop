@@ -43,7 +43,7 @@
               <v-sheet :max-width="display.smAndDown ? 'unset' : 518" class="text-black" width="100%">
                 <h5 class="fz-32m font-weight-regular lh-1 mb-4">Бажаєте замовити?</h5>
                 <p class="fz-20 font-weight-regular lh-140 mb-6">Залиште нам коментар, або зв’яжіться з нами через Instagram або Telegram</p>
-                <v-form v-model="valid" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" name="contact">
+                <v-form v-model="valid" data-netlify="true" action="/thanks" data-netlify-honeypot="bot-field" method="POST" name="contact">
                   <input name="form-name" type="hidden" value="contact"/> <input name="bot-field" type="hidden"/>
                   <v-text-field v-model="data.name" :rules="[v => !!v || 'Це поле необхідно заповнити']" class="mb-1" label="Ім’я" name="name" type="text" variant="outlined"></v-text-field>
                   <v-text-field v-model="data.phone" :rules="[v => !!v || 'Це поле необхідно заповнити']" class="mb-1" label="Телефон" name="phone" type="text" variant="outlined"></v-text-field>
