@@ -23,7 +23,7 @@
             <v-col class="d-flex align-center">
               <v-sheet class="text-black" :max-width="display.smAndDown ? 'unset' : 518" width="100%">
                 <h5 class="fz-32m font-weight-regular lh-1 mb-4">Бажаєте замовити?</h5>
-                <p class="fz-20 font-weight-regular lh-140 mb-6">Залиште нам коментар, або зв’яжіть з нами через Instagram або Telegram</p>
+                <p class="fz-20 font-weight-regular lh-140 mb-6">Залиште нам коментар, або зв’яжіться з нами через Instagram або Telegram</p>
                 <v-form v-model="valid" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                   <input type="hidden" name="form-name" value="contact" />
                   <input type="hidden" name="bot-field" />
