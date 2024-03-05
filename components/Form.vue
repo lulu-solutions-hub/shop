@@ -25,7 +25,7 @@
   });
 
   function sendMessage() {
-    const url = `https://api.telegram.org/bot${ runtimeConfig.public.telegramSecretApi }/sendMessage?chat_id=${ runtimeConfig.public.chatid }&parse_mode=Markdown&text=${ formattedText.value }`; // The url to request
+    const url = `https://api.telegram.org/bot${ runtimeConfig.public.telegramSecretApi }/sendMessage?chat_id=${ runtimeConfig.public.chatId }&message_thread_id=${ runtimeConfig.public.topicId }&parse_mode=Markdown&text=${ formattedText.value }`;
     const xht = new XMLHttpRequest();
     xht.open("GET", url);
     xht.send();
@@ -47,7 +47,7 @@
                   <input name="form-name" type="hidden" value="contact"/> <input name="bot-field" type="hidden"/>
                   <v-text-field v-model="data.name" :rules="[v => !!v || 'Це поле необхідно заповнити']" class="mb-1" label="Ім’я" name="name" type="text" variant="outlined"></v-text-field>
                   <v-text-field v-model="data.phone" :rules="[v => !!v || 'Це поле необхідно заповнити']" class="mb-1" label="Телефон" name="phone" type="text" variant="outlined"></v-text-field>
-                  <v-textarea v-model="data.message" label="Залиште коментар" name="message" variant="outlined"></v-textarea>
+                  <v-textarea v-model="data.message"  label="Залиште коментар" name="message" variant="outlined"></v-textarea>
                   <v-row justify="space-between">
                     <v-col>
                       <v-btn :block="xs" :disabled="!valid" class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" type="submit" width="200" @click="sendMessage">Надіслати</v-btn>

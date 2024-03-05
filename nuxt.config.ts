@@ -99,8 +99,9 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      telegramSecretApi: '7189565639:AAGo5DL1jOqjoYEvKP6y30p-jwXLpt58Vvk',
-      chatid: '-4173458849'
+      telegramSecretApi: '6846175338:AAEyv8r6hjgJQkNRuiqCvaOui_EI-jbLXiw',
+      chatId: '-1002026815522',
+      topicId: '30'
     }
   }
 })
