@@ -50,7 +50,7 @@
                   <v-textarea v-model="data.message"  label="Залиште коментар" name="message" variant="outlined"></v-textarea>
                   <v-row justify="space-between">
                     <v-col>
-                      <v-btn :block="xs" :disabled="!valid" class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" type="submit" width="200" @click="sendMessage">Надіслати</v-btn>
+                      <v-btn :block="xs" :disabled="!valid" class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" type="submit" width="200" >Надіслати</v-btn>
                     </v-col>
                     <v-col class="d-flex flex-nowrap" cols="auto">
                       <nuxt-link target="_blank" to="https://www.instagram.com/lulu_constructor_shop?igsh=aHhsaXJnZndqcXM1">
