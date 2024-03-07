@@ -95,5 +95,13 @@ export default defineNuxtConfig({
       '/old-trade/**': { ssr: true }
     }
   },
-  ssr: true
+  ssr: true,
+
+  runtimeConfig: {
+    public: {
+      telegramSecretApi: '6846175338:AAEyv8r6hjgJQkNRuiqCvaOui_EI-jbLXiw',
+      chatId: '-1002026815522',
+      topicId: '30'
+    }
+  }
 })
