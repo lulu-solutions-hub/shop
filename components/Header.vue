@@ -31,6 +31,11 @@
   });
 
   useHead({
+    meta: [
+      {
+        name: "facebook-domain-verification", content: "g0n9l8sj7jok48ifwd9ft462rul1z8"
+      }
+    ],
     script: [
       {
         innerHTML: `
