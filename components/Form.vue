@@ -30,6 +30,14 @@
     xht.open("GET", url);
     xht.send();
   }
+
+  const getOnePicture = (name: string) => {
+    const postImages = import.meta.glob(`~/public/img/cars/*/*.{png,jpg}`, { eager: true });
+    const imagePath = `/public/img/cars/${ id.value }/${ name }`;
+    return Object.entries(postImages)
+    .filter(([key]) => key.includes(imagePath))
+    .map(([, value]) => value?.default)[0];
+  };
 </script>
 
 <template>
@@ -72,7 +80,7 @@
       <!--RIGHT-->
       <v-col cols="12" md="6" order="1" order-md="2">
         <v-card class="h-100 rounded-0" variant="text">
-          <v-img :src="`/img/cars/${id}/car-footer.png`" class="w-100 menu-gradient"></v-img>
+          <v-img :src="getOnePicture('car-footer')" class="w-100 menu-gradient"></v-img>
         </v-card>
       </v-col>
     </v-row>

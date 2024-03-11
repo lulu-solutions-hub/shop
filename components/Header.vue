@@ -54,6 +54,14 @@
       }
     ]
   });
+
+  const getOnePicture = (name: string) => {
+    const postImages = import.meta.glob(`~/public/img/cars/*/*.{png,jpg}`, { eager: true });
+    const imagePath = `/public/img/cars/${ id.value }/${ name }`;
+    return Object.entries(postImages)
+    .filter(([key]) => key.includes(imagePath))
+    .map(([, value]) => value?.default)[0];
+  };
 </script>
 
 <template>
@@ -81,7 +89,7 @@
       <!--RIGHT-->
       <v-col cols="12" md="6" order="1" order-md="2">
         <v-card class="h-100 rounded-0 mx-n3 mx-md-0" variant="text">
-          <v-img :src="`/img/cars/${id}/car-header.png`" class="w-100 menu-gradient">
+          <v-img :src="getOnePicture('car-header')" class="w-100">
             <div class="menu-gradient">
               <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100 pr-7">
                 <v-item-group v-model="selectedFilter" mandatory>

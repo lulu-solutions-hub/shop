@@ -48,14 +48,14 @@
           <template v-if="display.mdAndUp">
             <swiper :autoplay="{  delay: 4000, disableOnInteraction: false,}" :centeredSlides="true" :coverflowEffect="swiperSetting.coverflowEffect" :effect="swiperSetting.effect" :grabCursor="true" :initial-slide="swiperSetting.initialSlide" :loop="true" :modules="swiperSetting.modules" :navigation="swiperSetting.navigation" :navigationEnabled="true" :pagination="{ clickable: true }" :slidesPerView="swiperSetting.slidesPerView">
               <swiper-slide v-for="(img, id) in files" :key="id">
-                <v-img :src="img" class="rounded-lg rounded-md-0" width="auto"></v-img>
+                <v-img :src="img" class="rounded-lg rounded-md-0" width="100%" height="270" cover></v-img>
               </swiper-slide>
             </swiper>
           </template>
           <template v-else>
             <swiper :autoplay="{  delay: 4000, disableOnInteraction: false,}" :centeredSlides="true" :grabCursor="true" :initial-slide="swiperSetting.initialSlide" :loop="true" :modules="swiperSetting.modules" :navigation="swiperSetting.navigation" :navigationEnabled="true" :pagination="{ clickable: true }" :slidesPerView="swiperSetting.slidesPerView">
               <swiper-slide v-for="(img, id) in files" :key="id">
-                <v-img :src="img" class="rounded-lg rounded-md-0" width="auto"></v-img>
+                <v-img :src="img" class="rounded-lg rounded-md-0" width="100%" cover height="300"></v-img>
               </swiper-slide>
             </swiper>
           </template>
