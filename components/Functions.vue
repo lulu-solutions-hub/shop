@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <v-container class="container-main" fluid>
+  <v-container v-if="car?.functions" class="container-main" fluid>
     <v-row>
       <v-col cols="12">
         <v-card variant="text">

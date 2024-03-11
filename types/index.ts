@@ -12,7 +12,7 @@ declare global {
         title: string,
         subtitle?: string,
       }[],
-    functions: {
+    functions?: {
       subtitle: string,
       size: string,
       details: string,
