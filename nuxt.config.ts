@@ -91,8 +91,7 @@ export default defineNuxtConfig({
     },
     routeRules: {
       '/': { prerender: true },
-      '/trade/**': { ssr: true },
-      '/old-trade/**': { ssr: true }
+      '/**': { prerender: true },
     }
   },
   ssr: true,
