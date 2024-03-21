@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import path from "path";
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -8,6 +8,18 @@ export default defineNuxtConfig({
   plugins: [
     '~/plugins/directives',
   ],
+
+  site: {
+    url: "https://lulu-constructor-shop.netlify.app/"
+  },
+
+  sitemap: {
+    urls: [
+      '/0',
+      '/',
+      '/thanks'
+    ]
+  },
 
   app: {
     head: {
@@ -44,6 +56,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-icon',
     'nuxt-gtag',
+    '@nuxtjs/sitemap'
   ],
 
   gtag: {
@@ -89,12 +102,8 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true
     },
-    routeRules: {
-      '/': { prerender: true },
-      '/**': { prerender: true },
-    }
   },
-  ssr: true,
+  ssr: false,
 
   runtimeConfig: {
     public: {
