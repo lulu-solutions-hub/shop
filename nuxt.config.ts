@@ -15,9 +15,24 @@ export default defineNuxtConfig({
 
   sitemap: {
     urls: [
-      '/0',
-      '/',
-      '/thanks'
+      {
+        loc: "/0",
+        lastmod: new Date(),
+        priority: 0.7,
+        changefreq: 'daily'
+      },
+      {
+        loc: "/",
+        lastmod: new Date(),
+        priority: 0.1,
+        changefreq: 'daily'
+      },
+      {
+        loc: "/thanks",
+        lastmod: new Date(),
+        priority: 0.1,
+        changefreq: 'daily'
+      },
     ]
   },
 
@@ -98,9 +113,6 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
     output: {
       publicDir: path.join(__dirname, 'dist')
-    },
-    prerender: {
-      crawlLinks: true
     },
   },
   ssr: false,
