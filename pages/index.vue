@@ -20,6 +20,9 @@
       meta: [
         {
           name: "facebook-domain-verification", content: "g0n9l8sj7jok48ifwd9ft462rul1z8"
+        },
+        {
+          name: "google-site-verification", content: "Rwkp0cpo7uQ4uim7VwevGQlh7zqG8ZkYndj0rb7CKRc"
         }
       ],
     }
@@ -41,7 +44,7 @@
 
           <v-card-text class="d-flex align-center justify-space-between">
             <span class="fz-24">{{ car.price }} грн</span>
-            <v-btn :icon="show[car.id] ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click.prevent="show[car.id] = !show[car.id]" :size="xs ? 'small' : 'default'"></v-btn>
+            <v-btn :icon="show[car.id] ? 'mdi-chevron-up' : 'mdi-chevron-down'" :size="xs ? 'small' : 'default'" @click.prevent="show[car.id] = !show[car.id]"></v-btn>
           </v-card-text>
 
           <v-expand-transition>
@@ -49,8 +52,8 @@
               <v-divider></v-divider>
 
               <v-card-text>
-               {{car.desc}}
-                </v-card-text>
+                {{ car.desc }}
+              </v-card-text>
             </div>
           </v-expand-transition>
         </v-card>
@@ -59,11 +62,12 @@
   </v-container>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
   .product {
     &-img {
       transition: transform .3s;
     }
+
     &:hover {
       .product-img {
         transform: scale(1.05);
