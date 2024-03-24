@@ -11,9 +11,11 @@
   const getOnePicture = (id: string, name: string) => {
     const postImages = import.meta.glob(`~/public/img/cars/*/*.{png,jpg}`, { eager: true });
     const imagePath = `/public/img/cars/${ id }/${ name }`;
-    return Object.entries(postImages)
+    const basePath = '/public';
+    const absolutePath: string =  Object.entries(postImages)
     .filter(([key]) => key.includes(imagePath))
     .map(([, value]) => value?.default)[0];
+    return absolutePath.substring(absolutePath.indexOf(basePath) + basePath.length);
   };
 
   useHead({
@@ -46,7 +48,7 @@
       <v-col v-for="(car, id) in cars" :key="id" cols="12" sm="6">
         <v-card :to="`/${car.id}`" class="mx-auto product">
           <div class="overflow-hidden">
-            <v-img :src="getOnePicture('' + car.id, 'car-header')" class="product-img" cover :alt="car.alt"></v-img>
+            <nuxt-img format="webp" preload :src="getOnePicture('' + car.id, 'car-header')" class="product-img w-100" fit="cover" :alt="car.alt"></nuxt-img>
           </div>
 
           <v-card-title>

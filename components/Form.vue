@@ -51,14 +51,14 @@
               <v-sheet :max-width="display.smAndDown ? 'unset' : 518" class="text-black" width="100%">
                 <h5 class="fz-32m font-weight-regular lh-1 mb-4">Бажаєте замовити?</h5>
                 <p class="fz-20 font-weight-regular lh-140 mb-6">Залиште нам коментар, або зв’яжіться з нами через Instagram або Telegram</p>
-                <v-form v-model="valid" action="/thanks" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" name="contact">
-                  <input name="form-name" type="hidden" value="contact"/> <input name="bot-field" type="hidden"/>
+                <v-form v-model="valid" name="contact" method="POST" netlify @submit="sendMessage" action="/thanks">
+                  <input type="hidden" name="form-name" value="contact">
                   <v-text-field v-model="data.name" :rules="[v => !!v || 'Це поле необхідно заповнити']" class="mb-1" label="Ім’я" name="name" type="text" variant="outlined"></v-text-field>
                   <v-text-field v-model="data.phone" :rules="[v => !!v || 'Це поле необхідно заповнити']" class="mb-1" label="Телефон" name="phone" type="text" variant="outlined"></v-text-field>
-                  <v-textarea v-model="data.message" label="Залиште коментар" name="message" variant="outlined"></v-textarea>
+                  <v-textarea v-model="data.message"  label="Залиште коментар" name="message" variant="outlined"></v-textarea>
                   <v-row justify="space-between">
                     <v-col>
-                      <v-btn :block="xs" :disabled="!valid" class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" type="submit" width="200" @click="sendMessage">Надіслати</v-btn>
+                      <v-btn :block="xs" :disabled="!valid" class="bg-red ls-normal text-none fz-20 font-weight-medium" size="large" type="submit" width="200">Надіслати</v-btn>
                     </v-col>
                     <v-col class="d-flex flex-nowrap" cols="auto">
                       <nuxt-link target="_blank" to="https://www.instagram.com/lulu_constructor_shop?igsh=aHhsaXJnZndqcXM1">

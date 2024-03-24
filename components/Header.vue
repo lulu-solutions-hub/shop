@@ -57,9 +57,12 @@
   const getOnePicture = (name: string) => {
     const postImages = import.meta.glob(`~/public/img/cars/*/*.{png,jpg}`, { eager: true });
     const imagePath = `/public/img/cars/${ id.value }/${ name }`;
-    return Object.entries(postImages)
+    const basePath = '/public';
+    const absolutePath: string =  Object.entries(postImages)
     .filter(([key]) => key.includes(imagePath))
     .map(([, value]) => value?.default)[0];
+    console.log('img', absolutePath.substring(absolutePath.indexOf(basePath) + basePath.length))
+    return absolutePath.substring(absolutePath.indexOf(basePath) + basePath.length);
   };
 </script>
 
@@ -91,7 +94,7 @@
       <!--RIGHT-->
       <v-col cols="12" md="6" order="1" order-md="2">
         <v-card class="h-100 rounded-0 mx-n3 mx-md-0" variant="text">
-          <v-img :src="getOnePicture('car-header')" class="w-100" :alt="car.alt">
+          <nuxt-img preload :src="getOnePicture('car-header')" format="webp" class="w-100" :alt="car.alt">
             <div class="menu-gradient">
               <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100 pr-7 d-flex d-md-block align-center justify-space-between">
                 <v-btn v-if="display.smAndDown" icon="" size="small" to="/" variant="text">
@@ -112,7 +115,7 @@
                 </v-item-group>
               </v-container>
             </div>
-          </v-img>
+          </nuxt-img>
         </v-card>
       </v-col>
     </v-row>
