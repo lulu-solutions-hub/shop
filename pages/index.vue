@@ -46,7 +46,7 @@
       <v-col v-for="(car, id) in cars" :key="id" cols="12" sm="6">
         <v-card :to="`/${car.id}`" class="mx-auto product">
           <div class="overflow-hidden">
-            <v-img :src="getOnePicture('' + car.id, 'car-header')" class="product-img" cover></v-img>
+            <v-img :src="getOnePicture('' + car.id, 'car-header')" class="product-img" cover :alt="car.alt"></v-img>
           </div>
 
           <v-card-title>
