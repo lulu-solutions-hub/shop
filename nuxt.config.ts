@@ -36,6 +36,10 @@ export default defineNuxtConfig({
     ]
   },
 
+  robots: {
+    Sitemap: `https://lulu-constructor-shop.netlify.app/sitemap.xml`,
+  },
+
   app: {
     head: {
       title: 'Lulu Constructor',
@@ -71,7 +75,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-icon',
     'nuxt-gtag',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
 
   gtag: {
@@ -115,7 +120,7 @@ export default defineNuxtConfig({
       publicDir: path.join(__dirname, 'dist')
     },
   },
-  ssr: false,
+  ssr: true,
 
   runtimeConfig: {
     public: {
