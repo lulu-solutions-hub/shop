@@ -91,7 +91,7 @@
       <!--RIGHT-->
       <v-col cols="12" md="6" order="1" order-md="2">
         <v-card class="h-100 rounded-0 mx-n3 mx-md-0" variant="text">
-          <v-img :src="getOnePicture('car-header')" class="w-100">
+          <v-img :src="getOnePicture('car-header')" class="w-100" :alt="car.alt">
             <div class="menu-gradient">
               <v-container :class="{'column-left container-50': display.mdAndUp}" class="h-100 pr-7 d-flex d-md-block align-center justify-space-between">
                 <v-btn v-if="display.smAndDown" icon="" size="small" to="/" variant="text">

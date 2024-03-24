@@ -4,6 +4,7 @@ declare global {
 
   interface Car {
     id: number,
+    alt: string,
     name: string,
     price: number,
     desc: string,
