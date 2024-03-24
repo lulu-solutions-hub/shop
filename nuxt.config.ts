@@ -47,7 +47,7 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         {
           name: 'viewport',
-          content: 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1,viewport-fit=true'
+          content: 'width=device-width,initial-scale=1,viewport-fit=true'
         },
       ],
     },
@@ -76,7 +76,8 @@ export default defineNuxtConfig({
     'nuxt-icon',
     'nuxt-gtag',
     '@nuxtjs/sitemap',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    '@nuxt/image'
   ],
 
   gtag: {
