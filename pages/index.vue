@@ -48,7 +48,7 @@
       <v-col v-for="(car, id) in cars" :key="id" cols="12" sm="6">
         <v-card :to="`/${car.id}`" class="mx-auto product">
           <div class="overflow-hidden">
-            <nuxt-img format="webp" preload :src="getOnePicture('' + car.id, 'car-header')" class="product-img w-100" fit="cover" :alt="car.alt"></nuxt-img>
+            <nuxt-img :src="getOnePicture('' + car.id, 'car-header')" class="product-img w-100" cover :alt="car.alt"></nuxt-img>
           </div>
 
           <v-card-title>
