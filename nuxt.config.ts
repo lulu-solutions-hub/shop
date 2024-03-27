@@ -19,7 +19,13 @@ export default defineNuxtConfig({
         loc: "/0",
         lastmod: new Date(),
         priority: 0.7,
-        changefreq: 'daily'
+        changefreq: 'daily',
+        images: [
+          {
+            loc: "/img/cars/0/car-header.png",
+            title: "constructor Porsche 911 rsr"
+          }
+        ],
       },
       {
         loc: "/",
