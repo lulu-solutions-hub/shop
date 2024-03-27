@@ -81,7 +81,6 @@
               <v-sheet :max-width="display.smAndDown ? 'unset' : 413" class="text-black">
                 <h3 class="fz-36 font-weight-regular mb-8">Конструктор</h3>
                 <h2 class="fz-68 font-weight-regular title lh-1 mb-1">{{ car.name }}</h2>
-                <span class="fz-36 font-weight-regular lh-1 title mb-1">Technic</span>
                 <p class="fz-32m title text-mainRed mb-8 lh-1">{{ car.price }} грн</p>
                 <p class="fz-20 lh-normal font-weight-regular mb-12">{{ car.subtitle }}</p>
                 <v-btn :block="xs" :size="xs ? 'x-large' : 'large'" class="bg-red ls-normal text-none fz-20 font-weight-medium" to="#form" width="200">Придбати</v-btn>
