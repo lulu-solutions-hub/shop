@@ -12,9 +12,9 @@
 </script>
 
 <template>
-  <v-container v-if="car?.functions" class="container-main" fluid>
+  <v-container class="container-main" fluid>
     <v-row>
-      <v-col cols="12">
+      <v-col cols="12" v-if="car?.functions">
         <v-card variant="text">
           <fieldset class="card-border rounded-e-xl">
             <legend class="fz-48 title font-weight-regular lh-140 pr-3 mb-5 mb-sm-0">Збірка</legend>
@@ -24,8 +24,8 @@
                   <div data-aos="fade-left">
                     <h3 class="text-uppercase title font-weight-regular mb-5 fz-32">Функції</h3>
                     <p class="fz-20 mb-2">{{ car.functions.subtitle }}</p>
-                    <p class="fz-20 font-weight-medium">{{ car.functions.details }}</p>
-                    <p class="fz-20 font-weight-medium">{{ car.functions.size }}</p>
+                    <p class="fz-20 font-weight-medium">{{ car.details }}</p>
+                    <p class="fz-20 font-weight-medium">{{ car.size }}</p>
                   </div>
                 </v-col>
                 <v-col cols="12" md="6" class="d-flex justify-center justify-md-end" order="1" order-md="2">
@@ -34,6 +34,17 @@
                   </video>
                 </v-col>
               </v-row>
+            </v-card-item>
+          </fieldset>
+        </v-card>
+      </v-col>
+      <v-col v-else cols="12">
+        <v-card variant="text">
+          <fieldset class="card-border rounded-e-xl">
+            <legend class="fz-48 title font-weight-regular lh-140 pr-3 mb-5 mb-sm-0">Інформація</legend>
+            <v-card-item class="px-0 py-10">
+              <p class="fz-20 font-weight-medium">{{ car.details }}</p>
+              <p class="fz-20 font-weight-medium">{{ car.size }}</p>
             </v-card-item>
           </fieldset>
         </v-card>
