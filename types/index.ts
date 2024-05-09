@@ -15,8 +15,8 @@ declare global {
       }[],
     functions?: {
       subtitle: string,
-      size: string,
-      details: string,
     },
+    size: string,
+    details: string,
   }
 }

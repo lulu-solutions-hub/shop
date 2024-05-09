@@ -14,7 +14,8 @@
 
   const rewardFilters = reactive([
     { name: "Опис", link: "#desc", show: true },
-    { name: "Збірка", link: "#functions", show: car.value.functions },
+    { name: "Збірка", link: "#functions", show: car?.value?.functions },
+    { name: "Інформація", link: "#functions", show: true },
     { name: "Контакти", link: "#form", show: true },
   ]);
 

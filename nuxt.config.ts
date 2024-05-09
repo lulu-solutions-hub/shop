@@ -28,6 +28,18 @@ export default defineNuxtConfig({
         ],
       },
       {
+        loc: "/2",
+        lastmod: new Date(),
+        priority: 0.7,
+        changefreq: 'daily',
+        images: [
+          {
+            loc: "/img/cars/2/car-header.png",
+            title: "constructor BMW M 1000 RR"
+          }
+        ],
+      },
+      {
         loc: "/",
         lastmod: new Date(),
         priority: 0.1,
