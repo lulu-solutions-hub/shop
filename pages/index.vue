@@ -12,7 +12,7 @@
     const postImages = import.meta.glob(`~/public/img/cars/*/*.{png,jpg}`, { eager: true });
     const imagePath = `/public/img/cars/${ id }/${ name }`;
     const basePath = '/public';
-    const absolutePath: string =  Object.entries(postImages)
+    const absolutePath: string = Object.entries(postImages)
     .filter(([key]) => key.includes(imagePath))
     .map(([, value]) => value?.default)[0];
     return absolutePath.substring(absolutePath.indexOf(basePath) + basePath.length);
@@ -38,6 +38,7 @@
             'лулу конструктор, не лего, lulu конструктор, конструктор, конструкторы, детские игрушки, детские игрушки Украина, детские игрушки, коллекционные модели, коллекционные машинки, реалистичная модель, реалистичная игрушка, детям, детям и взрослым, конструктор для детей, конструктор для взрослых'
         },
       ],
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.svg' }],
     }
   );
 </script>
@@ -48,7 +49,7 @@
       <v-col v-for="(car, id) in cars" :key="id" cols="12" sm="6">
         <v-card :to="`/${car.id}`" class="mx-auto product">
           <div class="overflow-hidden">
-            <v-img :src="getOnePicture('' + car.id, 'car-header')" class="product-img w-100" cover :alt="car.alt"></v-img>
+            <v-img :alt="car.alt" :src="getOnePicture('' + car.id, 'car-header')" class="product-img w-100" cover></v-img>
           </div>
 
           <v-card-title>
